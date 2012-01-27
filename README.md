@@ -16,6 +16,7 @@ livecache can:
 
 ## Examples
 lazy-load a node list:
+
 ```javascript
 $.livecache( 'div' ).length === 0; // true, assuming no divs exist in the DOM
 $(document.body).append("<div>Oh, Hai Div</div>");
@@ -24,6 +25,7 @@ $.livecache( 'div' ).length === 1 // true, now that one div exists
 You might be wondering what that gains you.  From this point on, a call to `$.livecache( 'div' )` does not query the DOM again.  Instead, the result is pulled from a cache.
 
 By default, livecache does not monitor the DOM for changes.  Here's an example of how to manually force the cache to update:
+
 ```javascript
 $.livecache( 'div' ).length === 1; // per our code example above, we have 1 div in the document
 $(document.body).append("<div>Oh, Hai - MOAR Divs!</div>");
@@ -32,6 +34,7 @@ $.livecache( 'div', true ).length === 2 // true, now that we forced an update
 ```
 
 What if you want to monitor the DOM for changes, and invalidate any cached selectors that would be affected:
+
 ```javascript
 // including "invalidateOnly" is unnecessary, since it defaults to true
 // you pass an object to $.livecache() when you want to set the configuration (current values are monitorDom and invalidateOnly)
@@ -42,6 +45,7 @@ $.livecache( 'div' ).length === 3 // true.  The cache got invalidated on the app
 ```
 
 What if you want to monitor the DOM for changes, and immediately update any cached selectors that would be affected:
+
 ```javascript
 $.livecache( { monitorDom: true, invalidateOnly: false }) ;
 $.livecache( 'div' ).length === 3; // per our code example above, we have 3 divs in the document

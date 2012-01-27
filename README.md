@@ -1,4 +1,4 @@
-# livecache
+# livecache - a jQuery function for caching DOM node lists
 
 ## Features
 livecache can:

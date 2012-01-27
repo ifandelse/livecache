@@ -3,7 +3,7 @@
 ## Features
 livecache can:
 
-* "lazy-load" a node list by allowing you to specify a selector before any matching elements exist in the DOM
+* "re-query" for a node list by allowing you to specify a selector before any matching elements exist in the DOM
     * if accessing a node list (`$.livecache('div')`) returns an empty list, livecache will query the DOM each time you access that selector until results exist
     * Once results exist, that static node list is cached and will be returned with subsequent calls to `$.livecache('div')`
 * manually force an update of a cached node list by calling `$.livecache('div', true)` where the second arg is a boolean flad indicating "force a refresh".
@@ -15,7 +15,7 @@ livecache can:
     * beware - this can be expensive
 
 ## Examples
-lazy-load a node list:
+re-query for a node list until results exist:
 
 ```javascript
 $.livecache( 'div' ).length === 0; // true, assuming no divs exist in the DOM

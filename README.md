@@ -10,9 +10,10 @@ livecache can:
 * automatically invalidate the cache by monitoring DOM mutator events (`DOMNodeInserted` & `DOMNodeRemoved`)
     * If any node being removed/inserted matches a cached selector, the selector is removed from the cache
     * subsequent queries for that same selector would re-create the cache entry
+    * **WARNING** This will be expensive.  Useful for debugging and experimentation? Yes.  Helpful for good DOM performance in live production?  NO.
 * automatically *update* the cache by monitoring DOM mutator events
     * If any node being removed/inserted matches a cached selector, that cache is immediately refreshed
-    * beware - this can be expensive
+    * **WARNING** This will be expensive.  Useful for debugging and experimentation? Yes.  Helpful for good DOM performance in live production?  NO.
 
 ## Examples
 re-query for a node list until results exist:

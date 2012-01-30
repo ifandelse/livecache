@@ -1,12 +1,12 @@
 {
     "source": "src",
-    "output": "lib/standard",
+    "output": "lib/amd",
     "lint": {},
     "uglify": {},
     "gzip": {},
     "extensions": { "uglify": "min", "gzip": "gz" },
     "wrap": {
-        "prefix": "(function($) {",
-        "suffix": "})(jQuery);"
+        "prefix": "define(['jquery'], function($) {",
+        "suffix": "});"
     }
 }
